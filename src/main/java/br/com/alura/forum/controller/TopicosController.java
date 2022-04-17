@@ -17,6 +17,8 @@ import org.springframework.web.util.UriComponentsBuilder;
 import java.net.URI;
 import java.util.List;
 
+import javax.validation.Valid;
+
 @RestController
 @RequestMapping("/topicos")
 public class TopicosController {
@@ -41,7 +43,7 @@ public class TopicosController {
     
    //@RequestMapping(value = "/topicos", method = RequestMethod.POST)
     @PostMapping
-    public ResponseEntity<TopicoDto> cadastrar(@RequestBody TopicoForm form, UriComponentsBuilder uriBuilder) {
+    public ResponseEntity<TopicoDto> cadastrar(@RequestBody @Valid TopicoForm form, UriComponentsBuilder uriBuilder) {
     	Topico topico = form.converter(cursoRepository);
     	topicoRepository.save(topico);
     	

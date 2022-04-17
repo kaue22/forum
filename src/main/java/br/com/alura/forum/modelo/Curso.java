@@ -14,6 +14,10 @@ public class Curso {
 	private String categoria;
 
 	
+	public Curso() {
+		
+	}
+	
 	public Curso(Long id, String nome, String categoria) {
 		this.id = id;
 		this.nome = nome;
