@@ -44,7 +44,7 @@ public class TopicosController {
 
 	// @RequestMapping(value = "/topicos", method = RequestMethod.GET)
 	@GetMapping
-	public Page<TopicoDto> lista(@RequestParam(required = false) String nomeCurso,@PageableDefault(sort = "id", direction = Direction.DESC) Pageable paginacao) {
+	public Page<TopicoDto> lista(@RequestParam(required = false) String nomeCurso,@PageableDefault(sort = "id", direction = Direction.DESC,page = 0,size = 10) Pageable paginacao) {
 
 		if (nomeCurso == null) {
 			Page<Topico> topics = topicoRepository.findAll(paginacao);
